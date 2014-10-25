@@ -1,8 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+DIRECTORY="../deploy/"
 
 ./gradlew jar
 
-mkdir ../deploy
-cp build/libs/TicTacToe.jar ../deploy/
+if [ ! -d "$DIRECTORY" ]; then
+    mkdir $DIRECTORY
+fi
 
-java -jar ../deploy/TicTacToe.jar
+cp build/libs/TicTacToe.jar $DIRECTORY
+
+java -jar "$DIRECTORY"TicTacToe.jar
