@@ -4,7 +4,7 @@ DIRECTORY="../deploy/"
 
 ./gradlew jar
 
-if [ -d "$DIRECTORY" ]; then
+if [ ! -d "$DIRECTORY" ]; then
     mkdir $DIRECTORY
 fi
 
