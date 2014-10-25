@@ -1,0 +1,8 @@
+#!/bin/bash
+
+./gradlew jar
+
+mkdir ../deploy
+cp build/libs/TicTacToe.jar ../deploy/
+
+java -jar ../deploy/TicTacToe.jar

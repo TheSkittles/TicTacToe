@@ -1,3 +1,1 @@
-#!/bin/bash
-
-./gradlew build
+./gradlew.bat build
