@@ -2,6 +2,7 @@ package is.skittles.tictactoe;
 
 public class Board {	
 
+	//0 eqauls empty cell, 1 equals x and 2 equals o
 	private int[] board = new int[9];
 
 	Board(){};
@@ -10,7 +11,14 @@ public class Board {
 		return board.length;
 	}
 
-    public static void main(String[] args) {
-        return;
+	//cell is the cell to be marked, team equals the team playing
+    public void mark(int cell, int team){
+    	if(cell>-1&&cell<9){
+    	    board[cell] = team;	
+    	}
+    }
+
+    public int getCellValue(int cell){
+    	return board[cell];
     }
 }
