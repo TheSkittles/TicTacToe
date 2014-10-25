@@ -19,10 +19,13 @@ public class Board {
         if(team<1||team>2){
             throw new IndexOutOfBoundsException("Team can only be 1 or 2");
         }
-        board[cell] = team;
+        if(board[cell] == 0) board[cell] = team;
     }
 
     public int getCellValue(int cell){
+        if(cell<0||cell>8){
+            throw new IndexOutOfBoundsException("Cell out of bound");
+        }
     	return board[cell];
     }
 }
