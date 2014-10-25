@@ -24,15 +24,15 @@ public class BoardTest {
 
     @Test
     public void testCannotPlaceAtCell9() {
-    thrown.expect(IndexOutOfBoundsException.class);
-    thrown.expectMessage("Cell out of bound");
-    b.mark(9, 1);
+        thrown.expect(IndexOutOfBoundsException.class);
+        thrown.expectMessage("Cell out of bound");
+        b.mark(9, 1);
     }
 
     @Test
     public void testTeamCannotBe3() {
-    thrown.expect(IndexOutOfBoundsException.class);
-    thrown.expectMessage("Team can only be 1 or 2");
-    b.mark(5, 3);
+        thrown.expect(IndexOutOfBoundsException.class);
+        thrown.expectMessage("Team can only be 1 or 2");
+        b.mark(5, 3);
     }
 }
