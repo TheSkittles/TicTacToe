@@ -4,8 +4,8 @@
  *
  * @author eggert, @date 10/25/14 2:33 PM
  */
-public class Library {
-    public boolean someLibraryMethod() {
-        return true;
+public class TicTacToe {
+    public static void main(String[] args) {
+        return;
     }
 }
