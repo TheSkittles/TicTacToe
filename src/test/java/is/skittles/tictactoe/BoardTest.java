@@ -88,4 +88,14 @@ public class BoardTest {
         b.mark(7, 2); 
         assertEquals(b.findWinner(1), 0);
     }
+
+    @Test
+    public void testIfThereIsADiagonalWinner() {
+        b.mark(0, 1);
+        b.mark(3, 2);
+        b.mark(4, 1);
+        b.mark(7, 2); 
+        b.mark(8, 1);
+        assertEquals(b.findWinner(1), 1);
+    }
 }
