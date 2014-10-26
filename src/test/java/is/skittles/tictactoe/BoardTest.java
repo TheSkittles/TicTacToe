@@ -51,10 +51,32 @@ public class BoardTest {
     thrown.expectMessage("Cell out of bound");
     b.getCellValue(10);
     }
-/*
-    @Test
-    public void testIfThereIsAWinner() {
 
+    @Test
+    public void testIfThereIsAWinnerInHorizontalLine() {
+        b.mark(0, 1);
+        b.mark(4, 2);
+        b.mark(1, 1);
+        b.mark(7, 2); 
+        b.mark(2, 1);
+        assertEquals(b.findWinner(1), 1);
     }
-*/
+    @Test
+    public void testIfThereIsAWinnerInHorizontalLinePLayer2() {
+        b.mark(0, 2);
+        b.mark(4, 1);
+        b.mark(1, 2);
+        b.mark(7, 1); 
+        b.mark(2, 2);
+        assertEquals(b.findWinner(2), 2);
+    }
+
+    @Test
+    public void testIfThereIsNoWinner() {
+        b.mark(0, 1);
+        b.mark(4, 2);
+        b.mark(1, 1);
+        b.mark(7, 2); 
+        assertEquals(b.findWinner(1), 0);
+    }
 }
