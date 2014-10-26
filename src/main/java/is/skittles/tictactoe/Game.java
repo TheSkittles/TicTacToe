@@ -19,6 +19,10 @@ public class Game {
 
     // This code kind of belongs to board
     public int[] getBoard() {
-        return new int[9];
+        int[] result = new int[9];
+        for (int i = 0; i < 9; i++) {
+            result[i] = board.getCellValue(i);
+        }
+        return result;
     }
 }

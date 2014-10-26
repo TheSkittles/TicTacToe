@@ -35,4 +35,10 @@ public class GameTest {
         
         assertArrayEquals("IntialBoard should be empty", g.getBoard(), clean);
     }
+
+    @Test public void testGetBoardAfterPlayed() {
+        g.mark(1);
+        int[] boardArray = g.getBoard();
+        assertEquals("Board array has correct player mark", boardArray[1], 1);
+    }
 }
