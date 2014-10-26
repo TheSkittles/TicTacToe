@@ -35,4 +35,13 @@ public class GameTest {
         
         assertArrayEquals("IntialBoard should be empty", g.getBoard(), clean);
     }
+
+    @Test public void testForWinner() {
+        g.mark(2);
+        g.mark(3);
+        g.mark(8);
+        g.mark(0);
+        g.mark(5);
+        assertEquals(g.getWinner(), 1);
+    }
 }
