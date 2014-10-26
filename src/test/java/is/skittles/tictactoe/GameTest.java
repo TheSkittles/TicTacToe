@@ -14,13 +14,13 @@ import static org.mockito.Mockito.*;
  * @author eggert, @date 10/26/14 2:38 PM
  */
 public class GameTest {
-    private Board b;
-    private Game g;
+    Board mockedBoard;
+    Game g;
 
     @Before
     public void setupTest() {
-        b = new Board();
-        g = new Game(b);
+        mockedBoard = mock(Board.class);
+        g = new Game(mockedBoard);
     }
 
     @Test public void testGetPlayerAtStart() {
@@ -39,7 +39,7 @@ public class GameTest {
     }
 
     @Test public void testGetBoardAfterPlayed() {
-        g.mark(1);
+        when(mockedBoard.getCellValue(1)).thenReturn(1);
         int[] boardArray = g.getBoard();
         assertEquals("Board array has correct player mark", boardArray[1], 1);
     }
@@ -47,9 +47,6 @@ public class GameTest {
     // This test is maybe not so useful
     // Verify that Game calls Board to find the board status
     @Test public void testBoardGetsCalled() {
-        Board mockedBoard = mock(Board.class);
-        Game g = new Game(mockedBoard);
-
         when(mockedBoard.getCellValue(0)).thenReturn(1);
         g.getBoard();
         verify(mockedBoard).getCellValue(1);
