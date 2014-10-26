@@ -17,10 +17,6 @@ public class BoardTest {
 
     }
 
-    @Test public void testArraySize() {
-        assertEquals(b.size(), 9);
-    }
-
     @Test public void testPlayerXmarksAtCell0() {
         b.mark(0, 1);
         assertEquals(b.getCellValue(0), 1);
@@ -55,4 +51,10 @@ public class BoardTest {
     thrown.expectMessage("Cell out of bound");
     b.getCellValue(10);
     }
+/*
+    @Test
+    public void testIfThereIsAWinner() {
+
+    }
+*/
 }
