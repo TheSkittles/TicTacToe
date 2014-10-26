@@ -34,9 +34,10 @@ public class Board {
     	return board[(int)(Math.floor(cell/n))][cell % n];
     }
 
+
     public int findWinner(int team) {
         int winner = 0;
-       
+       //Horizontal check
         for(int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (board[i][j] == team) {
@@ -44,7 +45,19 @@ public class Board {
                 }
                 else {
                     winner = 0;
-                    return winner;
+                }
+            }
+            if (winner == team)
+                return winner;
+        }
+        //Vertical check (Time to refactor!)
+        for(int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[j][i] == team) {
+                    winner = team;
+                }
+                else {
+                    winner = 0;    
                 }
             }
             if (winner == team)
