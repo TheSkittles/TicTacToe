@@ -17,10 +17,6 @@ public class BoardTest {
 
     }
 
-    @Test public void testArraySize() {
-        assertEquals(b.size(), 9);
-    }
-
     @Test public void testPlayerXmarksAtCell0() {
         b.mark(0, 1);
         assertEquals(b.getCellValue(0), 1);
@@ -54,5 +50,62 @@ public class BoardTest {
     thrown.expect(IndexOutOfBoundsException.class);
     thrown.expectMessage("Cell out of bound");
     b.getCellValue(10);
+    }
+
+    @Test
+    public void testIfThereIsAWinnerInHorizontalLine() {
+        b.mark(0, 1);
+        b.mark(4, 2);
+        b.mark(1, 1);
+        b.mark(7, 2); 
+        b.mark(2, 1);
+        assertEquals(b.findWinner(1), 1);
+    }
+    @Test
+    public void testIfThereIsAWinnerInHorizontalLinePLayer2() {
+        b.mark(0, 2);
+        b.mark(4, 1);
+        b.mark(1, 2);
+        b.mark(7, 1); 
+        b.mark(2, 2);
+        assertEquals(b.findWinner(2), 2);
+    }
+    @Test
+    public void testIfThereIsAVerticalWinner() {
+        b.mark(0, 1);
+        b.mark(4, 2);
+        b.mark(3, 1);
+        b.mark(7, 2); 
+        b.mark(6, 1);
+        assertEquals(b.findWinner(1), 1);
+    }
+
+    @Test
+    public void testIfThereIsNoWinner() {
+        b.mark(0, 1);
+        b.mark(4, 2);
+        b.mark(1, 1);
+        b.mark(7, 2); 
+        assertEquals(b.findWinner(1), 0);
+    }
+
+    @Test
+    public void testIfThereIsADiagonalWinner() {
+        b.mark(0, 1);
+        b.mark(3, 2);
+        b.mark(4, 1);
+        b.mark(7, 2); 
+        b.mark(8, 1);
+        assertEquals(b.findWinner(1), 1);
+    }
+
+    @Test
+    public void testIfThereIsAnAntiDiagonalWinner() {
+        b.mark(2, 1);
+        b.mark(3, 2);
+        b.mark(4, 1);
+        b.mark(7, 2); 
+        b.mark(6, 1);
+        assertEquals(b.findWinner(1), 1);
     }
 }
