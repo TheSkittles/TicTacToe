@@ -24,4 +24,15 @@ public class GameTest {
     @Test public void testGetPlayerAtStart() {
         assertEquals("Initital player should be 1", g.getPlayer(), 1);
     }
+
+    @Test public void testGetPlayerAfterOnePlay() {
+        g.mark(1);
+        assertEquals("Correct player after one move", g.getPlayer(), 2);
+    }
+
+    @Test public void testGetCleanBoard() {
+        int[] clean = new int[9];
+        
+        assertArrayEquals("IntialBoard should be empty", g.getBoard(), clean);
+    }
 }
