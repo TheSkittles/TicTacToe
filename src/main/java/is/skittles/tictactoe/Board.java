@@ -1,10 +1,10 @@
 package is.skittles.tictactoe;
 
 
-public class Board {	
+public class Board {
 
-	//0 eqauls empty cell, 1 equals x and 2 equals o
-	
+	//0 equals empty cell, 1 equals x and 2 equals o
+
     private int n = 3;
     private int[][] board = new int[n][n];
 
@@ -22,7 +22,7 @@ public class Board {
         if(team<1||team>2){
             throw new IndexOutOfBoundsException("Team can only be 1 or 2");
         }
-        if(board[i][j] == 0) 
+        if(board[i][j] == 0)
             board[i][j] = team;
 
     }
@@ -57,7 +57,7 @@ public class Board {
                     winner = team;
                 }
                 else {
-                    winner = 0;    
+                    winner = 0;
                 }
             }
             if (winner == team)
@@ -69,11 +69,11 @@ public class Board {
                 winner = team;
                 }
             else {
-                winner = 0;    
-                }   
+                winner = 0;
+                }
         }
          if (winner == team)
-            return winner; 
+            return winner;
 
         //Anti-Diagonal
         for (int i = 0; i < n; i++) {
@@ -81,8 +81,8 @@ public class Board {
                 winner = team;
                 }
             else {
-                winner = 0;    
-                }   
+                winner = 0;
+                }
         }
 
         return winner;
