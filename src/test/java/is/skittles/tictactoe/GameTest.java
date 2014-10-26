@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
 
+import static org.mockito.Mockito.*;
+
 /*
  * Game class
  *
@@ -40,5 +42,17 @@ public class GameTest {
         g.mark(1);
         int[] boardArray = g.getBoard();
         assertEquals("Board array has correct player mark", boardArray[1], 1);
+    }
+
+    // This test is maybe not so useful
+    // Verify that Game calls Board to find the board status
+    @Test public void testBoardGetsCalled() {
+        Board mockedBoard = mock(Board.class);
+        Game g = new Game(mockedBoard);
+
+        when(mockedBoard.getCellValue(0)).thenReturn(1);
+        g.getBoard();
+        verify(mockedBoard).getCellValue(1);
+
     }
 }
