@@ -75,6 +75,16 @@ public class Board {
          if (winner == team)
             return winner; 
 
+        //Anti-Diagonal
+        for (int i = 0; i < n; i++) {
+             if (board[i][n - 1 - i] == team) {
+                winner = team;
+                }
+            else {
+                winner = 0;    
+                }   
+        }
+
         return winner;
     }
 
