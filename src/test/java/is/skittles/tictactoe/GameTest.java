@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
 
+import static org.mockito.Mockito.*;
+
 /*
  * Game class
  *
@@ -12,13 +14,13 @@ import static org.junit.Assert.*;
  * @author eggert, @date 10/26/14 2:38 PM
  */
 public class GameTest {
-    private Board b;
-    private Game g;
+    Board mockedBoard;
+    Game g;
 
     @Before
     public void setupTest() {
-        b = new Board();
-        g = new Game(b);
+        mockedBoard = mock(Board.class);
+        g = new Game(mockedBoard);
     }
 
     @Test public void testGetPlayerAtStart() {
@@ -36,12 +38,24 @@ public class GameTest {
         assertArrayEquals("IntialBoard should be empty", g.getBoard(), clean);
     }
 
+
     @Test public void testForWinner() {
-        g.mark(2);
-        g.mark(3);
-        g.mark(8);
-        g.mark(0);
-        g.mark(5);
+        when(mockedBoard.findWinner(1)).thenReturn(1);
+        g.mark(1);
         assertEquals(g.getWinner(), 1);
+    }
+
+    @Test public void testGetBoardAfterPlayed() {
+        when(mockedBoard.getCellValue(1)).thenReturn(1);
+        int[] boardArray = g.getBoard();
+        assertEquals("Board array has correct player mark", boardArray[1], 1);
+    }
+
+    // This test is maybe not so useful
+    // Verify that Game calls Board to find the board status
+    @Test public void testBoardGetsCalled() {
+        when(mockedBoard.getCellValue(0)).thenReturn(1);
+        g.getBoard();
+        verify(mockedBoard).getCellValue(1);
     }
 }
