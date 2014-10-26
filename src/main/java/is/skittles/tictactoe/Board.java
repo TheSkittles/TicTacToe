@@ -63,6 +63,18 @@ public class Board {
             if (winner == team)
                 return winner;
         }
+        // Diagonal
+        for (int i = 0; i < n; i++) {
+             if (board[i][i] == team) {
+                winner = team;
+                }
+            else {
+                winner = 0;    
+                }   
+        }
+         if (winner == team)
+            return winner; 
+
         return winner;
     }
 
