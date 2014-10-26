@@ -13,14 +13,17 @@ public class Board {
 	//cell is the cell to be marked, team equals the team playing
     public void mark(int cell, int team){
 
+    int i = (int)(Math.floor(cell/n));
+    int j = cell % n;
+
     	if(cell<0||cell>8){
             throw new IndexOutOfBoundsException("Cell out of bound");
         }
         if(team<1||team>2){
             throw new IndexOutOfBoundsException("Team can only be 1 or 2");
         }
-        if(board[(int)(Math.floor(cell/n))][cell % n] == 0) 
-            board[(int)(Math.floor(cell/n))][cell % n] = team;
+        if(board[i][j] == 0) 
+            board[i][j] = team;
 
     }
 
@@ -29,6 +32,25 @@ public class Board {
             throw new IndexOutOfBoundsException("Cell out of bound");
         }
     	return board[(int)(Math.floor(cell/n))][cell % n];
+    }
+
+    public int findWinner(int team) {
+        int winner = 0;
+       
+        for(int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == team) {
+                    winner = team;
+                }
+                else {
+                    winner = 0;
+                    return winner;
+                }
+            }
+            if (winner == team)
+                return winner;
+        }
+        return winner;
     }
 
 }
