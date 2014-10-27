@@ -87,6 +87,7 @@ public class BoardTest {
         b.mark(1, 1);
         b.mark(7, 2); 
         assertEquals(b.findWinner(1), 0);
+        assertEquals(b.findWinner(2), 0);
     }
 
     @Test
