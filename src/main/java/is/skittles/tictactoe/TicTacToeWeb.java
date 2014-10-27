@@ -32,7 +32,7 @@ public class TicTacToeWeb {
             }
 
             if (g.getWinner() > 0) {
-              map.put("winner", g.getWinner());
+              map.put("winner", teamToMark(g.getWinner()));
               hasWinner = true;
             }
           }
@@ -42,11 +42,17 @@ public class TicTacToeWeb {
           // Create the cells
           int[] board = g.getBoard();
           for(int i = 0; i < 9;i++) {
-            map.put("c" + i, board[i]);
+            map.put("c" + i, teamToMark(board[i]));
             map.put("c" + i + "_filled", board[i] != 0);
           }
 
           return new ModelAndView(map, "TicTacToeWeb.mustache");
         }, new MustacheTemplateEngine());
+    }
+
+    public static String teamToMark(int team) {
+      if (team == 1) return "X";
+      if (team == 2) return "O";
+      return "░";
     }
 }

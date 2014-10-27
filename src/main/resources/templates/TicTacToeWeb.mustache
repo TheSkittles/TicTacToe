@@ -9,10 +9,6 @@
   <body>
     <h1>Tic-tac-toe</h1>
     <p>Welcome to the Tic-tac-toe game by Skittles.</p>
-    <p>Marks: {{marks}}</p>
-    {{#hasWinner}}
-      <p>Winner: {{winner}}</p>
-    {{/hasWinner}}
 
     <table>
       <tr>
@@ -94,5 +90,14 @@
         </td>
       </tr>
     </table>
+
+    <p>
+      Marks: {{marks}}
+      {{#hasWinner}}
+        <p>Winner: {{winner}}</p>
+      {{/hasWinner}}
+    </p>
+
+    <p><a href="/">New game</a></p>
   </body>
 </html>

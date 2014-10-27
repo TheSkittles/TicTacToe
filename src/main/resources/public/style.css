@@ -10,6 +10,15 @@ table td {
   padding: 10px;
 }
 
+table a {
+  color: #000;
+  text-decoration: none;
+}
+
+table a:visited {
+  color: #000;
+}
+
 table tr:nth-child(1) td {
   border-bottom: 1px solid #999;
 }
