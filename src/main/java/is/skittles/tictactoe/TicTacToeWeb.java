@@ -2,6 +2,7 @@ package is.skittles.tictactoe;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Arrays;
 
 import static spark.Spark.*;
 import spark.ModelAndView;
@@ -19,12 +20,13 @@ public class TicTacToeWeb {
 
           Map map = new HashMap();
           map.put("marks", marks);
+
           boolean hasWinner = false;
 
-          if (marks != null && marks.length() > 0) {
-            Board b = new Board();
-            Game g = new Game(b);
+          Board b = new Board();
+          Game g = new Game(b);
 
+          if (marks != null && marks.length() > 0) {
             for (char ch: marks.toCharArray()) {
               g.mark(Character.getNumericValue(ch));
             }
@@ -36,6 +38,13 @@ public class TicTacToeWeb {
           }
 
           map.put("hasWinner", hasWinner);
+
+          // Create the cells
+          int[] board = g.getBoard();
+          for(int i = 0; i < 9;i++) {
+            map.put("c" + i, board[i]);
+            map.put("c" + i + "_filled", board[i] != 0);
+          }
 
           return new ModelAndView(map, "TicTacToeWeb.mustache");
         }, new MustacheTemplateEngine());

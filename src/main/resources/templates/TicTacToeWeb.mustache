@@ -13,5 +13,86 @@
     {{#hasWinner}}
       <p>Winner: {{winner}}</p>
     {{/hasWinner}}
+
+    <table>
+      <tr>
+        <td>
+          {{#c0_filled}}
+            {{c0}}
+          {{/c0_filled}}
+          {{^c0_filled}}
+            <a href="?marks={{marks}}0">{{c0}}</a>
+          {{/c0_filled}}
+        </td>
+        <td>
+          {{#c1_filled}}
+            {{c1}}
+          {{/c1_filled}}
+          {{^c1_filled}}
+            <a href="?marks={{marks}}1">{{c1}}</a>
+          {{/c1_filled}}
+        </td>
+        <td>
+          {{#c2_filled}}
+            {{c2}}
+          {{/c2_filled}}
+          {{^c2_filled}}
+            <a href="?marks={{marks}}2">{{c2}}</a>
+          {{/c2_filled}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#c3_filled}}
+            {{c3}}
+          {{/c3_filled}}
+          {{^c3_filled}}
+            <a href="?marks={{marks}}3">{{c3}}</a>
+          {{/c3_filled}}
+        </td>
+        <td>
+          {{#c4_filled}}
+            {{c4}}
+          {{/c4_filled}}
+          {{^c4_filled}}
+            <a href="?marks={{marks}}4">{{c4}}</a>
+          {{/c4_filled}}
+        </td>
+        <td>
+          {{#c5_filled}}
+            {{c5}}
+          {{/c5_filled}}
+          {{^c5_filled}}
+            <a href="?marks={{marks}}5">{{c5}}</a>
+          {{/c5_filled}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#c6_filled}}
+            {{c6}}
+          {{/c6_filled}}
+          {{^c6_filled}}
+            <a href="?marks={{marks}}6">{{c6}}</a>
+          {{/c6_filled}}
+        </td>
+        <td>
+          {{#c7_filled}}
+            {{c7}}
+          {{/c7_filled}}
+          {{^c7_filled}}
+            <a href="?marks={{marks}}7">{{c7}}</a>
+          {{/c7_filled}}
+        </td>
+        <td>
+          {{#c8_filled}}
+            {{c8}}
+          {{/c8_filled}}
+          {{^c8_filled}}
+            <a href="?marks={{marks}}8">{{c8}}</a>
+          {{/c8_filled}}
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
