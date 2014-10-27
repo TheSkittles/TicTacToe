@@ -15,6 +15,9 @@ plugins {
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "is.skittles.tictactoe.TicTacToeWeb"
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -26,14 +29,14 @@ repositories {
 jar {
      manifest {
          attributes("Main-Class": "is.skittles.tictactoe.TicTacToe")
-    } 
+    }
 }
 
 cobertura {
 }
 
 test {
-    afterTest { desc, result -> 
+    afterTest { desc, result ->
         println "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
     }
 }
@@ -49,6 +52,8 @@ dependencies {
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.11'
     testCompile "org.mockito:mockito-core:1.+"
+
+    compile 'com.sparkjava:spark-core:2.0.0'
 }
 
 
