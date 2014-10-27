@@ -53,7 +53,7 @@ public class Board {
         //Vertical check (Time to refactor!)
         for(int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (board[j][i] == team) {
+                if (board[i][j] == team) {
                     winner = team;
                 }
                 else {
