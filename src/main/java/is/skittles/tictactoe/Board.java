@@ -35,55 +35,44 @@ public class Board {
 
 
     public int findWinner(int team) {
-        int winner = 0;
-        //Horizontal check
+        int winner = 1;
+
+        // Horizontal check
         for(int i = 0; i < n; i++) {
+            winner = 1;
+
             for (int j = 0; j < n; j++) {
-                if (board[i][j] == team) {
-                    winner = team;
-                }
-                else {
-                    winner = 0;
-                }
+                if (board[i][j] != team) winner = 0;
             }
-            if (winner == team)
-                return winner;
+
+            if (winner == 1) return team;
         }
-        //Vertical check (Time to refactor!)
+
+        // Vertical check
         for(int i = 0; i < n; i++) {
+            winner = 1;
+
             for (int j = 0; j < n; j++) {
-                if (board[i][j] == team) {
-                    winner = team;
-                }
-                else {
-                    winner = 0;
-                }
+                if (board[j][i] != team) winner = 0;
             }
-            if (winner == team)
-                return winner;
+
+            if (winner == 1) return team;
         }
+
         // Diagonal
+        winner = 1;
         for (int i = 0; i < n; i++) {
-             if (board[i][i] == team) {
-                winner = team;
-                }
-            else {
-                winner = 0;
-                }
+            if (board[i][i] != team) winner = 0;
         }
-        if (winner == team)
-            return winner;
+        if (winner == 1) return team;
 
-        //Anti-Diagonal
+        // Anti-Diagonal
+        winner = 1;
         for (int i = 0; i < n; i++) {
-             if (board[i][n - 1 - i] == team) {
-                winner = team;
-                }
-            else {
-                winner = 0;
-                }
+            if (board[i][n - 1 - i] != team) winner = 0;
         }
+        if (winner == 1) return team;
 
-        return winner;
+        return 0;
     }
 }

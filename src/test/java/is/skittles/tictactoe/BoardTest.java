@@ -110,4 +110,14 @@ public class BoardTest {
         b.mark(6, 1);
         assertEquals(b.findWinner(1), 1);
     }
+
+    @Test
+    // There was a case where the marks 201 wrongly gave a winner
+    public void testNoWinnerForMarks201() {
+      b.mark(2, 1);
+      b.mark(0, 2);
+      b.mark(1, 1);
+      assertEquals(0, b.findWinner(1));
+      assertEquals(0, b.findWinner(2));
+    }
 }
