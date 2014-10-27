@@ -14,17 +14,18 @@ public class BoardTest {
     @Before
     public void setUp() {
         b = new Board();
-
     }
 
-    @Test public void testPlayerXmarksAtCell0() {
+    @Test
+    public void testPlayerXmarksAtCell0() {
         b.mark(0, 1);
         assertEquals(b.getCellValue(0), 1);
     }
 
-    @Test public void testCannotPlaceAtAlreadyMarkedCell() {
+    @Test
+    public void testCannotPlaceAtAlreadyMarkedCell() {
         b.mark(0, 1);
-        b.mark(0, 2); 
+        b.mark(0, 2);
         assertEquals(b.getCellValue(0), 1);
     }
 
@@ -33,23 +34,23 @@ public class BoardTest {
 
     @Test
     public void testCannotPlaceAtCell9() {
-    thrown.expect(IndexOutOfBoundsException.class);
-    thrown.expectMessage("Cell out of bound");
-    b.mark(9, 1);
+        thrown.expect(IndexOutOfBoundsException.class);
+        thrown.expectMessage("Cell out of bound");
+        b.mark(9, 1);
     }
 
     @Test
     public void testTeamCannotBe3() {
-    thrown.expect(IndexOutOfBoundsException.class);
-    thrown.expectMessage("Team can only be 1 or 2");
-    b.mark(5, 3);
+        thrown.expect(IndexOutOfBoundsException.class);
+        thrown.expectMessage("Team can only be 1 or 2");
+        b.mark(5, 3);
     }
 
     @Test
     public void testCellCannotBe10() {
-    thrown.expect(IndexOutOfBoundsException.class);
-    thrown.expectMessage("Cell out of bound");
-    b.getCellValue(10);
+        thrown.expect(IndexOutOfBoundsException.class);
+        thrown.expectMessage("Cell out of bound");
+        b.getCellValue(10);
     }
 
     @Test
@@ -57,7 +58,7 @@ public class BoardTest {
         b.mark(0, 1);
         b.mark(4, 2);
         b.mark(1, 1);
-        b.mark(7, 2); 
+        b.mark(7, 2);
         b.mark(2, 1);
         assertEquals(b.findWinner(1), 1);
     }
@@ -66,7 +67,7 @@ public class BoardTest {
         b.mark(0, 2);
         b.mark(4, 1);
         b.mark(1, 2);
-        b.mark(7, 1); 
+        b.mark(7, 1);
         b.mark(2, 2);
         assertEquals(b.findWinner(2), 2);
     }
@@ -75,7 +76,7 @@ public class BoardTest {
         b.mark(0, 1);
         b.mark(4, 2);
         b.mark(3, 1);
-        b.mark(7, 2); 
+        b.mark(7, 2);
         b.mark(6, 1);
         assertEquals(b.findWinner(1), 1);
     }
@@ -85,7 +86,7 @@ public class BoardTest {
         b.mark(0, 1);
         b.mark(4, 2);
         b.mark(1, 1);
-        b.mark(7, 2); 
+        b.mark(7, 2);
         assertEquals(b.findWinner(1), 0);
         assertEquals(b.findWinner(2), 0);
     }
@@ -95,7 +96,7 @@ public class BoardTest {
         b.mark(0, 1);
         b.mark(3, 2);
         b.mark(4, 1);
-        b.mark(7, 2); 
+        b.mark(7, 2);
         b.mark(8, 1);
         assertEquals(b.findWinner(1), 1);
     }
@@ -105,7 +106,7 @@ public class BoardTest {
         b.mark(2, 1);
         b.mark(3, 2);
         b.mark(4, 1);
-        b.mark(7, 2); 
+        b.mark(7, 2);
         b.mark(6, 1);
         assertEquals(b.findWinner(1), 1);
     }

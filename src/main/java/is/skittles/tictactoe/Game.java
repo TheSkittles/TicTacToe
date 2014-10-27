@@ -22,7 +22,6 @@ public class Game {
         currentPlayer = (currentPlayer == 1 ? 2 : 1);
     }
 
-
     // This code kind of belongs to board
     public int[] getBoard() {
         int[] result = new int[9];
