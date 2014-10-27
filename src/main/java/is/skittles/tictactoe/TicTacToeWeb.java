@@ -13,10 +13,12 @@ public class TicTacToeWeb {
 
         staticFileLocation("/public");
 
-        Map map = new HashMap();
-        map.put("name", "Erlingur");
-
         // GameWeb.mustache file is in resources/templates directory
-        get("/hello", (rq, rs) -> new ModelAndView(map, "GameWeb.mustache"), new MustacheTemplateEngine());
+        get("/", (rq, rs) -> {
+          Map map = new HashMap();
+          map.put("name", "Erlingur");
+
+          return new ModelAndView(map, "TicTacToeWeb.mustache");
+        }, new MustacheTemplateEngine());
     }
 }
