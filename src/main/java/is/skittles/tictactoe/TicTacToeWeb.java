@@ -21,8 +21,6 @@ public class TicTacToeWeb {
           Map map = new HashMap();
           map.put("marks", marks);
 
-          boolean hasWinner = false;
-
           Board b = new Board();
           Game g = new Game(b);
 
@@ -33,11 +31,8 @@ public class TicTacToeWeb {
 
             if (g.getWinner() > 0) {
               map.put("winner", teamToMark(g.getWinner()));
-              hasWinner = true;
             }
           }
-
-          map.put("hasWinner", hasWinner);
 
           // Create the cells
           int[] board = g.getBoard();
