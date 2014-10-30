@@ -22,8 +22,12 @@ public class Board {
         int i = (int)(Math.floor(cell/n));
         int j = cell % n;
 
-        if(board[i][j] == 0)
+        if(board[i][j] != 0) {
+            throw new IndexOutOfBoundsException("Cell has already been used");
+        }
+        else {
             board[i][j] = team;
+        }
     }
 
     public int getCellValue(int cell){

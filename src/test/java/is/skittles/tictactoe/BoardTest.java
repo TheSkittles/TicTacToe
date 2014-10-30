@@ -22,15 +22,19 @@ public class BoardTest {
         assertEquals(b.getCellValue(0), 1);
     }
 
-    @Test
-    public void testCannotPlaceAtAlreadyMarkedCell() {
-        b.mark(0, 1);
-        b.mark(0, 2);
-        assertEquals(b.getCellValue(0), 1);
-    }
-
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+
+    // ?marks=11 did not return an error, instead it kept playing
+    // as nothing was wrong, by throwing an error the server
+    // displays an error message
+    @Test
+    public void testCannotPlaceAtAlreadyMarkedCell() {
+        thrown.expect(IndexOutOfBoundsException.class);
+        thrown.expectMessage("Cell has already been used");
+        b.mark(0, 1);
+        b.mark(0, 2);
+    }
 
     @Test
     public void testCannotPlaceAtCell9() {
