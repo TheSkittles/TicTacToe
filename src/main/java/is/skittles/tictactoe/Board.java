@@ -3,14 +3,14 @@ package is.skittles.tictactoe;
 
 public class Board {
 
-	//0 equals empty cell, 1 equals x and 2 equals o
+    //0 equals empty cell, 1 equals x and 2 equals o
 
     private int n = 3;
     private int[][] board = new int[n][n];
 
-	Board(){};
+    Board(){};
 
-	//cell is the cell to be marked, team equals the team playing
+    //cell is the cell to be marked, team equals the team playing
     public void mark(int cell, int team) {
         if(cell < 0 || cell > 8) {
             throw new IndexOutOfBoundsException("Cell out of bound");
@@ -32,7 +32,6 @@ public class Board {
         }
         return board[(int)(Math.floor(cell/n))][cell % n];
     }
-
 
     public int findWinner(int team) {
         int winner = 1;

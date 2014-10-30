@@ -12,6 +12,7 @@ public class Game {
     public int getPlayer() {
         return currentPlayer;
     }
+
     public int getWinner() {
         return winner;
     }
