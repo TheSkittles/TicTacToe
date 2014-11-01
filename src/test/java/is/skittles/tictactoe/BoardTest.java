@@ -145,6 +145,30 @@ public class BoardTest {
     public void testIfThereIsAHorizontalWinnerRow2() {
         b.mark(6, 1);
         b.mark(7, 1);
-        b.mark(8,1);
+        b.mark(8, 1);
+    }
+
+    @Test
+    public void testIfThereIsAVerticalWinnerRow0() {
+        b.mark(0, 1);
+        b.mark(3, 1);
+        b.mark(6, 1);
+        assertEquals(b.findWinner(1), 1);
+    }
+
+    @Test
+    public void testIfThereIsAVerticalWinnerRow1() {
+        b.mark(1, 1);
+        b.mark(4, 1);
+        b.mark(7, 1);
+        assertEquals(b.findWinner(1), 1);
+    }
+
+    @Test
+    public void testIfThereIsAVerticalWinnerRow2() {
+        b.mark(2, 1);
+        b.mark(5, 1);
+        b.mark(8, 1);
+        assertEquals(b.findWinner(1), 1);
     }
 }
