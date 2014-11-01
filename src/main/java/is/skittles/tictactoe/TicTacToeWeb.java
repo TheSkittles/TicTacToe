@@ -12,6 +12,10 @@ import static spark.Spark.get;
 public class TicTacToeWeb {
     public static void main(String[] args) {
 
+        String port = System.getenv("PORT");
+        if (port != null) {
+            setPort(Integer.valueOf(port));
+        }
 
         staticFileLocation("/public");
 
