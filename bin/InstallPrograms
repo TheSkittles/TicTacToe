@@ -1,0 +1,6 @@
+#Script for installing Java JDK, Gradle and Xvfb
+
+sudo add-apt-repository ppa:webupd8team/java &&
+sudo apt-get install gradle &&
+sudo apt-get update
+sudo apt-get install xvfb
