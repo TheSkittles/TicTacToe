@@ -52,7 +52,7 @@ public class Board {
         if (board[1][1] == team) {
             if (board[0][0] == board[1][1] && board[1][1] == board[2][2])
                 return team;
-            if (board[0][2] == board[1][1] && board[1][1] == board[0][2])
+            if (board[2][0] == board[1][1] && board[1][1] == board[0][2])
                 return team;
         }
 

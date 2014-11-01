@@ -171,4 +171,11 @@ public class BoardTest {
         b.mark(8, 1);
         assertEquals(b.findWinner(1), 1);
     }
+
+    @Test
+    public void testFor4and2ShouldNotWin() {
+        b.mark(2, 1);
+        b.mark(4, 1);
+        assertEquals(b.findWinner(1), 0);
+    }
 }
