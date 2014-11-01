@@ -1,0 +1,13 @@
+Desing report
+=========
+
+We will use sublime to design the program code. There should not have to be many classes, only one for the game features and another having an instance of the game.
+In addition there are two test classes, using Junit, one for each class. Tests will be written on the fly, before the code that it will test.
+
+Gradle will be used for automatic building and running unit tests.
+
+Github will be used as Version Control, and our initial step is to create a repository on Github. After each TDD Mantra (Write test,  write code, refactor) we will commit our changes to Github, so that we will have our program deployable for production at all times. For automated continuous integration we will use Travis as our tool.
+
+For templating the java code into our html file we will use Mustache, and by doing that the game can be played on localhost while the code is running on the GreenQloud machine.
+
+We plan to implement code coverage and code ispection into our code for monitoring, and use Selenium on Heroku for end-to-end tests.
