@@ -48,6 +48,6 @@ public class TicTacToeWeb {
     public static String teamToMark(int team) {
         if (team == 1) return "X";
         if (team == 2) return "O";
-        return "░";
+        return "-";
     }
 }
