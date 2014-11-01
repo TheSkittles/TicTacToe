@@ -43,7 +43,7 @@ public class TicTacToeWeb {
             int[] board = g.getBoard();
             for(int i = 0; i < 9;i++) {
                 map.put("c" + i, teamToMark(board[i]));
-                map.put("c" + i + "_filled", board[i] != 0);
+                map.put("c" + i + "_filled", (board[i] != 0 || g.getWinner() > 0));
             }
 
             return new ModelAndView(map, "TicTacToeWeb.mustache");
