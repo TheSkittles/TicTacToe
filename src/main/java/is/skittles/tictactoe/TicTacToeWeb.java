@@ -53,7 +53,9 @@ public class TicTacToeWeb {
                 if (board[i] == 0) draw = false;
             }
 
-            map.put("draw", draw);
+            if (g.getWinner() == 0) {
+              map.put("draw", draw);
+            }
 
             return new ModelAndView(map, "TicTacToeWeb.mustache");
         }, new MustacheTemplateEngine());

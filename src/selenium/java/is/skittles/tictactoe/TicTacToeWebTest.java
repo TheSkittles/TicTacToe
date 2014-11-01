@@ -28,6 +28,13 @@ public class TicTacToeWebTest {
     String error = driver.findElement(By.cssSelector("p.error")).getText();
   }
 
+  @Test
+  public void testNoDrawIfWinner() throws Exception {
+    driver.get(baseUrl + "/?marks=462038157");
+    assertEquals(1, driver.findElements(By.cssSelector("p.winner")).size());
+    assertEquals(0, driver.findElements(By.cssSelector("p.draw")).size());
+  }
+
   @After
   public void tearDown() throws Exception {
     driver.quit();
