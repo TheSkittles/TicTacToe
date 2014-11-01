@@ -4,6 +4,7 @@
 sudo apt-get install git &&
 sudo git clone https://github.com/TheSkittles/TicTacToe.git &&
 sudo add-apt-repository ppa:webupd8team/java &&
-sudo apt-get install gradle &&
 sudo apt-get update &&
+sudo apt-get install oracle-java8-installer &&
+sudo apt-get install gradle &&
 sudo apt-get install xvfb
