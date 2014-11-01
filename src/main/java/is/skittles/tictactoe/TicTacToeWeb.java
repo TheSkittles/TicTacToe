@@ -12,6 +12,7 @@ import static spark.Spark.get;
 public class TicTacToeWeb {
     public static void main(String[] args) {
 
+
         staticFileLocation("/public");
 
         // GameWeb.mustache file is in resources/templates directory
