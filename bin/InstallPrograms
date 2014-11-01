@@ -2,7 +2,7 @@
 #Script for installing git, Java JDK, Gradle and Xvfb and cloning the repository
 
 sudo apt-get install git &&
-sudo git clone https://github.com/TheSkittles/TicTacToe.git &&
+git clone https://github.com/TheSkittles/TicTacToe.git &&
 sudo add-apt-repository ppa:webupd8team/java &&
 sudo apt-get update &&
 sudo apt-get install oracle-java8-installer &&
