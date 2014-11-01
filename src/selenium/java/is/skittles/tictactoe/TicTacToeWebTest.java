@@ -18,7 +18,7 @@ public class TicTacToeWebTest {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://127.0.0.1:4567";
+    baseUrl = "https://skittles.herokuapp.com";
     driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
   }
 
