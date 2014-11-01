@@ -124,4 +124,27 @@ public class BoardTest {
         assertEquals(b.findWinner(1), 0);
         assertEquals(b.findWinner(2), 0);
     }
+
+    @Test
+    public void testIfThereIsAHorizontalWinnerRow0() {
+        b.mark(0, 1);
+        b.mark(1, 1);
+        b.mark(2, 1);
+        assertEquals(b.findWinner(1), 1);
+    }
+
+    @Test
+    public void testIfThereIsAHorizontalWinnerRow1() {
+        b.mark(3, 1);
+        b.mark(4, 1);
+        b.mark(5, 1);
+        assertEquals(b.findWinner(1), 1);
+    }
+
+    @Test
+    public void testIfThereIsAHorizontalWinnerRow2() {
+        b.mark(6, 1);
+        b.mark(7, 1);
+        b.mark(8,1);
+    }
 }
