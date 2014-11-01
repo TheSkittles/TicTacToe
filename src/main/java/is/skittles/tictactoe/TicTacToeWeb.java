@@ -14,6 +14,8 @@ public class TicTacToeWeb {
 
         staticFileLocation("/public");
 
+	setPort(80);
+
         // GameWeb.mustache file is in resources/templates directory
         get("/", (rq, rs) -> {
             String marks = rq.queryParams("marks");
