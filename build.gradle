@@ -7,14 +7,10 @@
  * user guide available at http://gradle.org/docs/2.1/userguide/tutorial_java_projects.html
  */
 
-// Add cobertura code coverage
-plugins {
-    id 'net.saliman.cobertura' version '2.2.5'
-}
-
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'jacoco'
 
 mainClassName = "is.skittles.tictactoe.TicTacToeWeb"
 
@@ -31,13 +27,14 @@ jar {
     }
 }
 
-cobertura {
-}
-
 test {
     afterTest { desc, result ->
         println "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
     }
+}
+
+jacoco {
+
 }
 
 check {
@@ -94,11 +91,11 @@ task seleniumXvfb(type: Test, dependsOn: installApp) {
     classpath = sourceSets.selenium.runtimeClasspath
     environment "DISPLAY", ":99"
     doFirst {
-//        'bin/xvfb start'.execute()
-//        'build/install/TicTacToe/bin/TicTacToe &'.execute()
+        'bin/xvfb start'.execute()
+        'build/install/TicTacToe/bin/TicTacToe &'.execute()
     }
     doLast {
-//        'bin/xvfb stop'.execute()
+        'bin/xvfb stop'.execute()
     }
 }
 
