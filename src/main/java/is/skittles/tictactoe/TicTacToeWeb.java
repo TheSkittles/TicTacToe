@@ -46,10 +46,14 @@ public class TicTacToeWeb {
 
             // Create the cells
             int[] board = g.getBoard();
+            boolean draw = true;
             for(int i = 0; i < 9;i++) {
                 map.put("c" + i, teamToMark(board[i]));
                 map.put("c" + i + "_filled", (board[i] != 0 || g.getWinner() > 0));
+                if (board[i] == 0) draw = false;
             }
+
+            map.put("draw", draw);
 
             return new ModelAndView(map, "TicTacToeWeb.mustache");
         }, new MustacheTemplateEngine());

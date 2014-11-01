@@ -27,6 +27,13 @@ p.winner {
   padding: 0 0 10px 0;
 }
 
+p.draw {
+  font-size: 20px;
+  font-weight: bold;
+  color: orange;
+  padding: 0 0 10px 0;
+}
+
 table {
   width: 200px;
   margin: 40px auto;
