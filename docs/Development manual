@@ -2,6 +2,16 @@
 
 This is a development manual for installing Tic Tac Toe on a Linux machine
 
+1. Run Automated Installation
+````sh 
+wget https://raw.githubusercontent.com/TheSkittles/TicTacToe/master/bin/InstallPrograms
+```
+````sh
+chmod +x installPrograms
+./installPrograms
+```
+
+2. Step By Step instruction (optional):  
 Check if Java JDK is installed:
 ```sh
 javac -version
@@ -10,10 +20,11 @@ If you get an error or have an outdated version, install Java by entering:
 ```sh
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
+sudo apt-get install oracle-java8-installer
 ```
-Install git on your machine using:
+Install git on your machine:
 ```sh
-apt-get install git
+sudo apt-get install git
 ```
 Then clone the project to your machine:
 ```sh
@@ -22,7 +33,15 @@ git clone git@github.com:TheSkittles/TicTacToe.git
 Install Gradle:
 ```sh
 sudo apt-get install gradle
+sudo apt-get update
 ```
+Install Run Selenium functional test
+```sh
+sudo apt-get install xvfb
+```
+
+
+
 
 #####Þetta eru bara stikkorð
 
@@ -32,3 +51,4 @@ Gradle will also have to be installed
 The user has to have access to heroku
 
 For running the program a browser will have to be installed on the machine
+
