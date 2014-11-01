@@ -94,11 +94,11 @@ task seleniumXvfb(type: Test, dependsOn: installApp) {
     classpath = sourceSets.selenium.runtimeClasspath
     environment "DISPLAY", ":99"
     doFirst {
-//        'bin/xvfb start'.execute()
-//        'build/install/TicTacToe/bin/TicTacToe &'.execute()
+        'bin/xvfb start'.execute()
+        'build/install/TicTacToe/bin/TicTacToe &'.execute()
     }
     doLast {
-//        'bin/xvfb stop'.execute()
+        'bin/xvfb stop'.execute()
     }
 }
 
