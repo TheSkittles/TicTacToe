@@ -26,7 +26,12 @@ public class TicTacToeWeb {
 
             if (marks != null && marks.length() > 0) {
                 for (char ch: marks.toCharArray()) {
-                    g.mark(Character.getNumericValue(ch));
+                    try {
+                      g.mark(Character.getNumericValue(ch));
+                    }
+                    catch (IndexOutOfBoundsException e) {
+                      map.put("error", e.getMessage());
+                    }
                 }
 
                 if (g.getWinner() > 0) {
