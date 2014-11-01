@@ -1,5 +1,8 @@
-#Script for installing Java JDK, Gradle and Xvfb
 
+#Script for installing git, Java JDK, Gradle and Xvfb and cloning the repository
+
+sudo apt-get install git &&
+sudo git clone https://github.com/TheSkittles/TicTacToe.git &&
 sudo add-apt-repository ppa:webupd8team/java &&
 sudo apt-get install gradle &&
 sudo apt-get update
