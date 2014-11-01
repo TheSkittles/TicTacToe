@@ -12,6 +12,11 @@ import static spark.Spark.get;
 public class TicTacToeWeb {
     public static void main(String[] args) {
 
+        String port = System.getenv("PORT");
+        if (port != null) {
+            setPort(Integer.valueOf(port));
+        }
+
         staticFileLocation("/public");
 
         // GameWeb.mustache file is in resources/templates directory
@@ -41,10 +46,14 @@ public class TicTacToeWeb {
 
             // Create the cells
             int[] board = g.getBoard();
+            boolean draw = true;
             for(int i = 0; i < 9;i++) {
                 map.put("c" + i, teamToMark(board[i]));
                 map.put("c" + i + "_filled", (board[i] != 0 || g.getWinner() > 0));
+                if (board[i] == 0) draw = false;
             }
+
+            map.put("draw", draw);
 
             return new ModelAndView(map, "TicTacToeWeb.mustache");
         }, new MustacheTemplateEngine());
@@ -53,6 +62,6 @@ public class TicTacToeWeb {
     public static String teamToMark(int team) {
         if (team == 1) return "X";
         if (team == 2) return "O";
-        return "░";
+        return "-";
     }
 }

@@ -17,7 +17,7 @@
 
       <table>
         <tr>
-          <td>
+          <td class="cell_0">
             {{#c0_filled}}
               {{c0}}
             {{/c0_filled}}
@@ -25,7 +25,7 @@
               <a href="?marks={{marks}}0">&#9617;</a>
             {{/c0_filled}}
           </td>
-          <td>
+          <td class="cell_1">
             {{#c1_filled}}
               {{c1}}
             {{/c1_filled}}
@@ -33,7 +33,7 @@
               <a href="?marks={{marks}}1">&#9617;</a>
             {{/c1_filled}}
           </td>
-          <td>
+          <td class="cell_2">
             {{#c2_filled}}
               {{c2}}
             {{/c2_filled}}
@@ -43,7 +43,7 @@
           </td>
         </tr>
         <tr>
-          <td>
+          <td class="cell_3">
             {{#c3_filled}}
               {{c3}}
             {{/c3_filled}}
@@ -51,7 +51,7 @@
               <a href="?marks={{marks}}3">&#9617;</a>
             {{/c3_filled}}
           </td>
-          <td>
+          <td class="cell_4">
             {{#c4_filled}}
               {{c4}}
             {{/c4_filled}}
@@ -59,7 +59,7 @@
               <a href="?marks={{marks}}4">&#9617;</a>
             {{/c4_filled}}
           </td>
-          <td>
+          <td class="cell_5">
             {{#c5_filled}}
               {{c5}}
             {{/c5_filled}}
@@ -69,7 +69,7 @@
           </td>
         </tr>
         <tr>
-          <td>
+          <td class="cell_6">
             {{#c6_filled}}
               {{c6}}
             {{/c6_filled}}
@@ -77,7 +77,7 @@
               <a href="?marks={{marks}}6">&#9617;</a>
             {{/c6_filled}}
           </td>
-          <td>
+          <td class="cell_7">
             {{#c7_filled}}
               {{c7}}
             {{/c7_filled}}
@@ -85,7 +85,7 @@
               <a href="?marks={{marks}}7">&#9617;</a>
             {{/c7_filled}}
           </td>
-          <td>
+          <td class="cell_8">
             {{#c8_filled}}
               {{c8}}
             {{/c8_filled}}
@@ -99,6 +99,10 @@
       {{#winner}}
         <p class="winner">Winner: {{winner}}</p>
       {{/winner}}
+
+      {{#draw}}
+        <p class="draw">Draw!</p>
+      {{/draw}}
 
       <p><a href="/" class="btn">New game</a></p>
     </div>
