@@ -1,8 +1,16 @@
+
 #Development manual
 
 This is a development manual for installing Tic Tac Toe on a Linux machine
 
-1. Run Automated Installation
+To start with you have to sign up on:
+```sh
+Github.com
+Heroku.com
+Travis-ci.org
+```
+
+Run Automated Installation
 ````sh 
 wget https://raw.githubusercontent.com/TheSkittles/TicTacToe/master/bin/InstallPrograms
 ```
@@ -11,7 +19,7 @@ chmod +x installPrograms
 ./installPrograms
 ```
 
-2. Step By Step instruction (optional):  
+Step By Step instruction (optional):  
 Check if Java JDK is installed:
 ```sh
 javac -version
@@ -42,13 +50,4 @@ sudo apt-get install xvfb
 
 
 
-
-#####Þetta eru bara stikkorð
-
-
-Gradle will also have to be installed
-
-The user has to have access to heroku
-
-For running the program a browser will have to be installed on the machine
 
