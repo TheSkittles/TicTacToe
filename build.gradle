@@ -57,4 +57,6 @@ dependencies {
     compile 'com.sparkjava:spark-template-mustache:1.0.0'
 }
 
-
+task stage {
+    dependsOn installApp
+}
