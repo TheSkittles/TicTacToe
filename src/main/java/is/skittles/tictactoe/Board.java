@@ -38,43 +38,23 @@ public class Board {
     }
 
     public int findWinner(int team) {
-        int winner = 1;
-
-        // Horizontal check
+        // horizontal and vertical
         for(int i = 0; i < n; i++) {
-            winner = 1;
-
-            for (int j = 0; j < n; j++) {
-                if (board[i][j] != team) winner = 0;
+            if (board[i][i] == team) {
+                if (board[0][i] == board[1][i] && board[1][i] == board[2][i])
+                    return team;
+                if (board[i][0] == board[i][1] && board[i][1] == board[i][2])
+                    return team;
             }
-
-            if (winner == 1) return team;
         }
 
-        // Vertical check
-        for(int i = 0; i < n; i++) {
-            winner = 1;
-
-            for (int j = 0; j < n; j++) {
-                if (board[j][i] != team) winner = 0;
-            }
-
-            if (winner == 1) return team;
+        // diagonal and anti-diagonal
+        if (board[1][1] == team) {
+            if (board[0][0] == board[1][1] && board[1][1] == board[2][2])
+                return team;
+            if (board[0][2] == board[1][1] && board[1][1] == board[0][2])
+                return team;
         }
-
-        // Diagonal
-        winner = 1;
-        for (int i = 0; i < n; i++) {
-            if (board[i][i] != team) winner = 0;
-        }
-        if (winner == 1) return team;
-
-        // Anti-Diagonal
-        winner = 1;
-        for (int i = 0; i < n; i++) {
-            if (board[i][n - 1 - i] != team) winner = 0;
-        }
-        if (winner == 1) return team;
 
         return 0;
     }
