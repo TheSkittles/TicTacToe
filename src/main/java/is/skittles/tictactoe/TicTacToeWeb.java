@@ -31,7 +31,12 @@ public class TicTacToeWeb {
 
             if (marks != null && marks.length() > 0) {
                 for (char ch: marks.toCharArray()) {
-                    g.mark(Character.getNumericValue(ch));
+                    try {
+                      g.mark(Character.getNumericValue(ch));
+                    }
+                    catch (IndexOutOfBoundsException e) {
+                      map.put("error", e.getMessage());
+                    }
                 }
 
                 if (g.getWinner() > 0) {
@@ -43,7 +48,7 @@ public class TicTacToeWeb {
             int[] board = g.getBoard();
             for(int i = 0; i < 9;i++) {
                 map.put("c" + i, teamToMark(board[i]));
-                map.put("c" + i + "_filled", board[i] != 0);
+                map.put("c" + i + "_filled", (board[i] != 0 || g.getWinner() > 0));
             }
 
             return new ModelAndView(map, "TicTacToeWeb.mustache");
