@@ -1,0 +1,5 @@
+#Script for administrator for installing git and  Gradle and cloning the reposi$
+
+sudo apt-get install git &&
+git clone https://github.com/TheSkittles/TicTacToe.git &&
+sudo apt-get install gradle
