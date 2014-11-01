@@ -1,6 +1,3 @@
-#Development manual
-
-This is a development manual for installing Tic Tac Toe on a Linux machine
 
 #Development manual
 
