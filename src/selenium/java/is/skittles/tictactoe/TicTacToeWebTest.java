@@ -19,7 +19,7 @@ public class TicTacToeWebTest {
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
     baseUrl = "http://127.0.0.1:4567";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
   }
 
   @Test
