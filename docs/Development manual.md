@@ -61,3 +61,5 @@ Some helper scripts are supplied for convenience
  bin/coverage        : create test coverage report [and open in browser on supported OS]
 
 ```
+
+Continuous Integration via Travis-CI will run automatically on pushing to git repository. If committing changes not requiring a build of the project please add [skip ci] to commit message to avoid uneeded builds.
