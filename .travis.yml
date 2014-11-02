@@ -1,18 +1,14 @@
 language: java
 jdk: oraclejdk8
-
 install:
-  - gem install dpl
-
+- gem install dpl
 script:
-  - "./gradlew check"
-  - "./gradlew jacoco"
-  - dpl --provider=heroku --api-key='00909bde-5256-4e89-86c0-37b0d7a606c4' --app='skittles-staging'
-  - "./bin/seleniumxvfb"
-
-after_script: 
-  - ./bin/copytogithub
-
+- "./gradlew check"
+- "./gradlew jacoco"
+- dpl --provider=heroku --api-key=${H_KEY} --app='skittles-staging'
+- "./bin/seleniumxvfb"
+after_script:
+- "./bin/copytogithub"
 deploy:
   provider: heroku
   api_key:
@@ -22,5 +18,7 @@ deploy:
     repo: TheSkittles/TicTacToe
 env:
   global:
+    # Github token
     secure: E4/FFETCL+Li5vVMCWsq0ih17jCTFhn4Hh89JbsFgXtpE/NAe7l03YiWBJjqNNWin3lbWx2G97BudttrvGB6tMr7mFzYnEV13P4i63Q6i2arTqwN8ndcpoXG9t+Tpocspk50vj+A6yyXv/0zNbRoFmJoKoN6f0n/boFJXfYeyAM=
-
+    # Heroku key
+    secure: kK40uDUU2Se0QnEdEM5P8un+n+XDw66shxBJdOU55YRWVtMLNktXj5LuUf3Q0DugO1Y0blr8S/e5u2t/qRuaweAGoUbmXZHd2XPfzwqy2STfEpcCGKu8c+BqJeqnc1T/8Cb3UV4E1F30xu88ibYqv9EEAmzPStTucO1TwNa9Md8=
