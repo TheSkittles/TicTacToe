@@ -1,3 +1,5 @@
+# thanks to http://sleepycoders.blogspot.com/2013/03/sharing-travis-ci-generated-files.html for creating this excellent method of copying
+
 if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   echo -e "Starting to update gh-pages\n"
 
