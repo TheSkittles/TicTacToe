@@ -63,3 +63,5 @@ Some helper scripts are supplied for convenience
 ```
 
 Continuous Integration via Travis-CI will run automatically on pushing to git repository. If committing changes not requiring a build of the project please add [skip ci] to commit message to avoid uneeded builds.
+
+The automatic build runs coverage checks and code inspection in the process. Reports from these as well as unit test results are available on github pages for the repository. Links to these reports are found at the bottom of Readme on github.
