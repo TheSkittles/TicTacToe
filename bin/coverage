@@ -3,4 +3,6 @@
 ./gradlew test
 ./gradlew jacoco
 
-open build/reports/jacoco/test/html/index.html
+if [ "$(uname)" == "Darwin" ]; then
+    open build/reports/jacoco/test/html/index.html
+fi

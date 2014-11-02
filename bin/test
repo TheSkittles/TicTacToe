@@ -2,4 +2,6 @@
 
 ./gradlew test
 
-open build/reports/tests/index.html
+if [ "$(uname)" == "Darwin" ]; then
+    open build/reports/tests/index.html
+fi
