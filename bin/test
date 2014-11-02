@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
 ./gradlew test
+
+open build/reports/tests/index.html
