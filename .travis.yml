@@ -1,16 +1,6 @@
 language: java
 jdk: oraclejdk8
 
-# deploy_old:
-#   provider: heroku
-#   api_key:
-#     secure: A3lzZE6jthwOdNWg/ziRxAtwwcvSyidtDnlleEsectdxvvylLxxRhqIpwExGdvCp15xqjrxwB/6AdlII9NmSA/ZJloF/Sa8joXpy20jawYD+EbukaHhjLJ6j/9FQ3C0ElvviYo7pW2vNzb0AXlpGf8P17TTx5XxGPmAFdujDT0U=
-#   app: skittles
-#   on:
-#     repo: TheSkittles/TicTacToe
-
-install:
-  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 deploy:
   provider: heroku
@@ -22,4 +12,8 @@ deploy:
 
 after_deploy: 
   - "./bin/seleniumxvfb"
-  - heroku apps
+  deploy:
+    provider: heroku
+    api_key:
+      secure: A3lzZE6jthwOdNWg/ziRxAtwwcvSyidtDnlleEsectdxvvylLxxRhqIpwExGdvCp15xqjrxwB/6AdlII9NmSA/ZJloF/Sa8joXpy20jawYD+EbukaHhjLJ6j/9FQ3C0ElvviYo7pW2vNzb0AXlpGf8P17TTx5XxGPmAFdujDT0U=
+    app: skittles
