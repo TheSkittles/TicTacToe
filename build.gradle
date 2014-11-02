@@ -11,12 +11,6 @@ repositories {
     jcenter()
 }
 
-jar {
-     manifest {
-         attributes("Main-Class": "is.skittles.tictactoe.TicTacToe")
-    }
-}
-
 test {
     afterTest { desc, result ->
         println "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
