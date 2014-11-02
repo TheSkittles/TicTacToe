@@ -11,7 +11,5 @@ import static org.junit.Assert.*;
  */
 public class TicTacToeTest {
     @Test public void testSomethingBogus() {
-        TicTacToe classUnderTest = new TicTacToe();
-        assertTrue("True should be true", true);
     }
 }

@@ -14,7 +14,7 @@ public class TicTacToeWeb {
 
         String port = System.getenv("PORT");
         if (port != null) {
-            setPort(Integer.valueOf(port));
+            setPort(Integer.parseInt(port));
         }
 
         staticFileLocation("/public");

@@ -25,7 +25,7 @@ public class TicTacToeWebTest {
   @Test
   public void testCellAlreadyUsed() throws Exception {
     driver.get(baseUrl + "/?marks=00");
-    String error = driver.findElement(By.cssSelector("p.error")).getText();
+    assertEquals(1, driver.findElements(By.cssSelector("p.error")).size());
   }
 
   @Test

@@ -2,6 +2,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'jacoco'
+apply plugin: 'findbugs'
 
 mainClassName = "is.skittles.tictactoe.TicTacToeWeb"
 
@@ -82,4 +83,11 @@ task seleniumXvfb(type: Test, dependsOn: installApp) {
 
 task stage {
     dependsOn installApp
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
 }
