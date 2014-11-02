@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export PORT=4567
+export baseUrl="localhost:4567"
+
+./gradlew seleniumXvfb

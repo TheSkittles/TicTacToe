@@ -1,9 +1,3 @@
 #!/usr/bin/env bash
 
-DIRECTORY="../deploy/"
-
 ./gradlew clean
-
-if [ -d "$DIRECTORY" ]; then
-    rm -rf $DIRECTORY
-fi
