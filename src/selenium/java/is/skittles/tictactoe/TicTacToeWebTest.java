@@ -20,7 +20,7 @@ public class TicTacToeWebTest {
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
     baseUrl = System.getenv("baseUrl");
-      if (baseUrl != null) {
+      if (baseUrl == null) {
           baseUrl = "https://skittles-staging.herokuapp.com";
       }    
     driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
