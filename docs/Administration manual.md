@@ -22,7 +22,12 @@ cd TicTacToe
 ./gradlew run
 ```
 
-Now the game is up and running and can be played in any browser on:
+Now the game is up and running and can be played in any browser, on a typical setup at the following url.
 ```sh
 localhost:4567
+```
+
+The port that the server listens on can be configured with $PORT environment variable. To make it listen on default HTTP issue this command.
+```sh
+export PORT=80
 ```
