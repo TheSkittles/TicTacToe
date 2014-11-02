@@ -3,6 +3,8 @@
 
 This is a development manual for installing Tic Tac Toe on a Linux machine
 
+##Getting started
+
 To start with you have to sign up on:
 ```sh
 Github.com
@@ -18,6 +20,7 @@ wget https://raw.githubusercontent.com/TheSkittles/TicTacToe/master/bin/InstallP
 chmod +x InstallPrograms
 ./InstallPrograms
 ```
+###Detailed installation
 
 Step By Step instruction (optional):
 Check if Java JDK is installed:
@@ -47,6 +50,8 @@ Install Run Selenium functional test
 ```sh
 sudo apt-get install xvfb
 ```
+
+##Development
 
 Some helper scripts are supplied for convenience
 
