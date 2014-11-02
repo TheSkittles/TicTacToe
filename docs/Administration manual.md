@@ -7,9 +7,11 @@ Anyone can run the program on the following link:
 http://skittles.herokuapp.com/
 ```
 
-If an administrator needs to run the program locally he can run the following command 
+If an administrator needs to run the program locally he can run the following commands
 ```sh
-wget https://github.com/TheSkittles/TicTacToe/blob/master/bin/InstallProgramsAdmin
+wget https://raw.githubusercontent.com/TheSkittles/TicTacToe/master/bin/InstallProgramsAdmin
+chmod +x InstallProgramsAdmin
+./InstallProgramsAdmin
 ```
 
 This installs git and gradle and clones the repository to the administrators local computer.
