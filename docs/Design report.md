@@ -1,4 +1,4 @@
-#Desing report
+#Design report
 
 The basic tools we will be using are:
 
@@ -8,7 +8,7 @@ Gradle will be used for automatic building and running unit tests.
 
 Github will be used as Version Control, and our initial step is to create a repository on Github. After each TDD Mantra (Write test,  write code, refactor) we will commit our changes to Github, so that we will have our program deployable for production at all times. For automated continuous integration we will use Travis as our tool.
 
-For templating the java code into our html file we will use Mustache, and by doing that the game can be played on localhost while the code is running on the GreenQloud machine.
+For templating the java code into our html file we will use Mustache, and by doing that the game can be played in a browser on localhost.
 
 We plan to implement code coverage and code inspection into our code for monitoring, and use Selenium on Heroku for end-to-end tests.
 
