@@ -3,7 +3,7 @@ jdk: oraclejdk8
 install:
 - gem install dpl
 script:
-- "./gradlew check"
+#- "./gradlew check"
 - ./bin/copytogithub
 #- dpl --provider=heroku --api-key='00909bde-5256-4e89-86c0-37b0d7a606c4' --app='skittles-staging'
 #- "./bin/seleniumxvfb"
@@ -14,7 +14,8 @@ script:
 #   app: skittles
 #   on:
 #     repo: TheSkittles/TicTacToe
-env-global:
-  secure: E4/FFETCL+Li5vVMCWsq0ih17jCTFhn4Hh89JbsFgXtpE/NAe7l03YiWBJjqNNWin3lbWx2G97BudttrvGB6tMr7mFzYnEV13P4i63Q6i2arTqwN8ndcpoXG9t+Tpocspk50vj+A6yyXv/0zNbRoFmJoKoN6f0n/boFJXfYeyAM=
+env:
+  global:
+    secure: E4/FFETCL+Li5vVMCWsq0ih17jCTFhn4Hh89JbsFgXtpE/NAe7l03YiWBJjqNNWin3lbWx2G97BudttrvGB6tMr7mFzYnEV13P4i63Q6i2arTqwN8ndcpoXG9t+Tpocspk50vj+A6yyXv/0zNbRoFmJoKoN6f0n/boFJXfYeyAM=
 
 # after_success: ./bin/copytogithub
