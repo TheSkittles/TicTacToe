@@ -1,22 +1,11 @@
 language: java
 jdk: oraclejdk8
-
-# deploy_old:
-#   provider: heroku
-#   api_key:
-#     secure: A3lzZE6jthwOdNWg/ziRxAtwwcvSyidtDnlleEsectdxvvylLxxRhqIpwExGdvCp15xqjrxwB/6AdlII9NmSA/ZJloF/Sa8joXpy20jawYD+EbukaHhjLJ6j/9FQ3C0ElvviYo7pW2vNzb0AXlpGf8P17TTx5XxGPmAFdujDT0U=
-#   app: skittles
-#   on:
-#     repo: TheSkittles/TicTacToe
-
 install:
-  - gem install dpl
-
+- gem install dpl
 script:
-    - ./gradlew check
-    - dpl --provider=heroku --api-key='00909bde-5256-4e89-86c0-37b0d7a606c4' --app='skittles-staging'
-    - ./bin/seleniumxvfb
-
+- "./gradlew check"
+- dpl --provider=heroku --api-key='00909bde-5256-4e89-86c0-37b0d7a606c4' --app='skittles-staging'
+- "./bin/seleniumxvfb"
 deploy:
   provider: heroku
   api_key:
@@ -24,4 +13,5 @@ deploy:
   app: skittles
   on:
     repo: TheSkittles/TicTacToe
-
+env-global:
+  secure: E4/FFETCL+Li5vVMCWsq0ih17jCTFhn4Hh89JbsFgXtpE/NAe7l03YiWBJjqNNWin3lbWx2G97BudttrvGB6tMr7mFzYnEV13P4i63Q6i2arTqwN8ndcpoXG9t+Tpocspk50vj+A6yyXv/0zNbRoFmJoKoN6f0n/boFJXfYeyAM=
