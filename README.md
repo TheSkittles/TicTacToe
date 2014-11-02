@@ -1,7 +1,7 @@
 #TicTacToe
 Late term assignment in Hugbúnaðarfræði.
 
-A game of Tic Tac Toe where the object of the game is to get three X's or O's i$
+A game of Tic Tac Toe where the object of the game is to get three X's or O's in a row on a 3x3 board.
 
 The Skittles team members:
 ```sh
