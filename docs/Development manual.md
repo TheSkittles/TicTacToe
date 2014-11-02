@@ -15,8 +15,8 @@ Run Automated Installation
 wget https://raw.githubusercontent.com/TheSkittles/TicTacToe/master/bin/InstallPrograms
 ```
 ````sh
-chmod +x installPrograms
-./installPrograms
+chmod +x InstallPrograms
+./InstallPrograms
 ```
 
 Step By Step instruction (optional):
