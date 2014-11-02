@@ -48,6 +48,16 @@ Install Run Selenium functional test
 sudo apt-get install xvfb
 ```
 
+Some helper scripts are supplied for convenience
 
+```sh
 
+ bin/board_test      : run unit tests against board class
+ bin/game_test       : run unit tests against game class
+ bin/build           : build project
+ bin/clean           : remove build artifacts
+ bin/test            : run all unit tests [and open report in browser on supported OS]
+ bin/endtoend_local  : run selenium end to end test locally
+ bin/coverage        : create test coverage report [and open in browser on supported OS]
 
+```
