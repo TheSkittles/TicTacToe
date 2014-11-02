@@ -20,6 +20,5 @@ deploy:
   on:
     repo: TheSkittles/TicTacToe
 
-after_deploy: 
-  - "./bin/seleniumxvfb"
-  - dpl --provider=heroku --api-key='00909bde-5256-4e89-86c0-37b0d7a606c4' --app='skittles'
+after_deploy:
+  - "./bin/seleniumxvfb && dpl --provider=heroku --api-key='00909bde-5256-4e89-86c0-37b0d7a606c4' --app='skittles'"
