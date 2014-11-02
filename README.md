@@ -22,7 +22,7 @@ Coverage:
 [http://theskittles.github.io/TicTacToe/jacoco/](http://theskittles.github.io/TicTacToe/jacoco/)
 
 Code inspection:
-[http://theskittles.github.io/TicTacToe/findbugs/](http://theskittles.github.io/TicTacToe/findbugs/)
+[http://theskittles.github.io/TicTacToe/findbugs/](http://theskittles.github.io/TicTacToe/findbugs/main.html)
 
 Tests:
 [http://theskittles.github.io/TicTacToe/tests/](http://theskittles.github.io/TicTacToe/tests/)
