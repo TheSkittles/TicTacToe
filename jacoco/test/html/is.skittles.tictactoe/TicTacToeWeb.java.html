@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>TicTacToeWeb.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TicTacToe</a> &gt; <a href="index.source.html" class="el_package">is.skittles.tictactoe</a> &gt; <span class="el_source">TicTacToeWeb.java</span></div><h1>TicTacToeWeb.java</h1><pre class="source lang-java linenums">package is.skittles.tictactoe;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Arrays;
+
+import static spark.Spark.*;
+import spark.ModelAndView;
+import spark.template.mustache.MustacheTemplateEngine;
+import static spark.Spark.get;
+
+<span class="nc" id="L12">public class TicTacToeWeb {</span>
+    public static void main(String[] args) {
+
+<span class="nc" id="L15">        String port = System.getenv(&quot;PORT&quot;);</span>
+<span class="nc bnc" id="L16" title="All 2 branches missed.">        if (port != null) {</span>
+<span class="nc" id="L17">            setPort(Integer.parseInt(port));</span>
+        }
+
+<span class="nc" id="L20">        staticFileLocation(&quot;/public&quot;);</span>
+
+        // GameWeb.mustache file is in resources/templates directory
+<span class="nc" id="L23">        get(&quot;/&quot;, (rq, rs) -&gt; {</span>
+            String marks = rq.queryParams(&quot;marks&quot;);
+
+            Map map = new HashMap();
+            map.put(&quot;marks&quot;, marks);
+
+            Board b = new Board();
+            Game g = new Game(b);
+
+            if (marks != null &amp;&amp; marks.length() &gt; 0) {
+                for (char ch: marks.toCharArray()) {
+                    try {
+                      g.mark(Character.getNumericValue(ch));
+                    }
+                    catch (IndexOutOfBoundsException e) {
+                      map.put(&quot;error&quot;, e.getMessage());
+                    }
+                }
+
+                if (g.getWinner() &gt; 0) {
+                    map.put(&quot;winner&quot;, teamToMark(g.getWinner()));
+                }
+            }
+
+            // Create the cells
+            int[] board = g.getBoard();
+            boolean draw = true;
+            for(int i = 0; i &lt; 9;i++) {
+                map.put(&quot;c&quot; + i, teamToMark(board[i]));
+                map.put(&quot;c&quot; + i + &quot;_filled&quot;, (board[i] != 0 || g.getWinner() &gt; 0));
+                if (board[i] == 0) draw = false;
+            }
+
+            if (g.getWinner() == 0) {
+              map.put(&quot;draw&quot;, draw);
+            }
+
+            // if (marks != null &amp;&amp; marks.equals(&quot;0123&quot;)) {
+              // map.put(&quot;error&quot;, &quot;Please be original for ONCE in your life.&quot;);
+            // }
+
+            return new ModelAndView(map, &quot;TicTacToeWeb.mustache&quot;);
+        }, new MustacheTemplateEngine());
+<span class="nc" id="L66">    }</span>
+
+    public static String teamToMark(int team) {
+<span class="nc bnc" id="L69" title="All 2 branches missed.">        if (team == 1) return &quot;X&quot;;</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">        if (team == 2) return &quot;O&quot;;</span>
+<span class="nc" id="L71">        return &quot;-&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

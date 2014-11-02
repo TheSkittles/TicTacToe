@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Board.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TicTacToe</a> &gt; <a href="index.source.html" class="el_package">is.skittles.tictactoe</a> &gt; <span class="el_source">Board.java</span></div><h1>Board.java</h1><pre class="source lang-java linenums">package is.skittles.tictactoe;
+
+
+public class Board {
+
+    //0 equals empty cell, 1 equals x and 2 equals o
+
+<span class="fc" id="L8">    private int n = 3;</span>
+<span class="fc" id="L9">    private int[][] board = new int[n][n];</span>
+
+<span class="fc" id="L11">    Board(){};</span>
+
+    //cell is the cell to be marked, team equals the team playing
+    public void mark(int cell, int team) {
+<span class="pc bpc" id="L15" title="1 of 4 branches missed.">        if(cell &lt; 0 || cell &gt; 8) {</span>
+<span class="fc" id="L16">            throw new IndexOutOfBoundsException(&quot;Cell out of bound&quot;);</span>
+        }
+<span class="pc bpc" id="L18" title="1 of 4 branches missed.">        if(team &lt; 1 || team &gt; 2) {</span>
+<span class="fc" id="L19">            throw new IndexOutOfBoundsException(&quot;Team can only be 1 or 2&quot;);</span>
+        }
+
+<span class="fc" id="L22">        int i = findHorizontal(cell);</span>
+<span class="fc" id="L23">        int j = findVertical(cell);</span>
+<span class="fc" id="L24">        System.out.println(i + &quot;:&quot; + j);</span>
+
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if(board[i][j] != 0) {</span>
+<span class="fc" id="L27">            throw new IndexOutOfBoundsException(&quot;Cell has already been used&quot;);</span>
+        }
+        else {
+<span class="fc" id="L30">            board[i][j] = team;</span>
+        }
+<span class="fc" id="L32">    }</span>
+
+    public int getCellValue(int cell){
+<span class="pc bpc" id="L35" title="1 of 4 branches missed.">        if(cell &lt; 0 || cell &gt; 8) {</span>
+<span class="fc" id="L36">            throw new IndexOutOfBoundsException(&quot;Cell out of bound&quot;);</span>
+        }
+<span class="fc" id="L38">        return board[findHorizontal(cell)][findVertical(cell)];</span>
+    }
+
+    public int findVertical(int cell) {
+<span class="fc" id="L42">        return cell % n;</span>
+    }
+
+    public int findHorizontal(int cell) {
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (cell &lt; 3)</span>
+<span class="fc" id="L47">            return 0;</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (cell &lt; 6)</span>
+<span class="fc" id="L49">            return 1;</span>
+<span class="fc" id="L50">        return 2;</span>
+    }
+
+    public int findWinner(int team) {
+        // horizontal and vertical
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        for(int i = 0; i &lt; n; i++) {</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">            if (board[i][i] == team) {</span>
+<span class="fc bfc" id="L57" title="All 4 branches covered.">                if (board[0][i] == board[1][i] &amp;&amp; board[1][i] == board[2][i])</span>
+<span class="fc" id="L58">                    return team;</span>
+<span class="fc bfc" id="L59" title="All 4 branches covered.">                if (board[i][0] == board[i][1] &amp;&amp; board[i][1] == board[i][2])</span>
+<span class="fc" id="L60">                    return team;</span>
+            }
+        }
+
+        // diagonal and anti-diagonal
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (board[1][1] == team) {</span>
+<span class="pc bpc" id="L66" title="1 of 4 branches missed.">            if (board[0][0] == board[1][1] &amp;&amp; board[1][1] == board[2][2])</span>
+<span class="fc" id="L67">                return team;</span>
+<span class="pc bpc" id="L68" title="1 of 4 branches missed.">            if (board[2][0] == board[1][1] &amp;&amp; board[1][1] == board[0][2])</span>
+<span class="fc" id="L69">                return team;</span>
+        }
+
+<span class="fc" id="L72">        return 0;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
