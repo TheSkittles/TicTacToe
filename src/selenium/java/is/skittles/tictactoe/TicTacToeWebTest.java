@@ -9,6 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+
 public class TicTacToeWebTest {
   private WebDriver driver;
   private String baseUrl;
@@ -18,7 +19,10 @@ public class TicTacToeWebTest {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "https://skittles-staging.herokuapp.com";
+    baseUrl = System.getenv("baseUrl");
+      if (baseUrl != null) {
+          baseUrl = "https://skittles-staging.herokuapp.com";
+      }    
     driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
   }
 
