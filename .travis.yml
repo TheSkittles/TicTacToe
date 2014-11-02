@@ -1,6 +1,16 @@
 language: java
 jdk: oraclejdk8
 
+# deploy_old:
+#   provider: heroku
+#   api_key:
+#     secure: A3lzZE6jthwOdNWg/ziRxAtwwcvSyidtDnlleEsectdxvvylLxxRhqIpwExGdvCp15xqjrxwB/6AdlII9NmSA/ZJloF/Sa8joXpy20jawYD+EbukaHhjLJ6j/9FQ3C0ElvviYo7pW2vNzb0AXlpGf8P17TTx5XxGPmAFdujDT0U=
+#   app: skittles
+#   on:
+#     repo: TheSkittles/TicTacToe
+
+install:
+  - gem install dpl
 
 deploy:
   provider: heroku
@@ -12,8 +22,4 @@ deploy:
 
 after_deploy: 
   - "./bin/seleniumxvfb"
-  deploy:
-    provider: heroku
-    api_key:
-      secure: A3lzZE6jthwOdNWg/ziRxAtwwcvSyidtDnlleEsectdxvvylLxxRhqIpwExGdvCp15xqjrxwB/6AdlII9NmSA/ZJloF/Sa8joXpy20jawYD+EbukaHhjLJ6j/9FQ3C0ElvviYo7pW2vNzb0AXlpGf8P17TTx5XxGPmAFdujDT0U=
-    app: skittles
+  - dpl --provider=heroku --api-key=`00909bde-5256-4e89-86c0-37b0d7a606c4` --app=`skittles`
