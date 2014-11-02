@@ -1,14 +1,20 @@
 language: java
 jdk: oraclejdk8
+install:
+- gem install dpl
+script:
+- "./gradlew check"
+- ./bin/copytogithub
+#- dpl --provider=heroku --api-key='00909bde-5256-4e89-86c0-37b0d7a606c4' --app='skittles-staging'
+#- "./bin/seleniumxvfb"
+# deploy:
+#   provider: heroku
+#   api_key:
+#     secure: XVvHzKuuhBpfv99TRFh4FFA8RYQJuZXOaParsLN++lcDe2RLrX3Hd+stlvR8ZlNnMpPri46dQzyUQCsPjfun8w65qONvHsFEKcBraGIa1sMmXliyAlYVH3nyJKaT9NxJFJeOsda7hyaBx/Jgx+bcWyTdViY9YBU9602AlXgGu9I=
+#   app: skittles
+#   on:
+#     repo: TheSkittles/TicTacToe
+# env-global:
+#   secure: E4/FFETCL+Li5vVMCWsq0ih17jCTFhn4Hh89JbsFgXtpE/NAe7l03YiWBJjqNNWin3lbWx2G97BudttrvGB6tMr7mFzYnEV13P4i63Q6i2arTqwN8ndcpoXG9t+Tpocspk50vj+A6yyXv/0zNbRoFmJoKoN6f0n/boFJXfYeyAM=
 
-before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-
-deploy:
-  provider: heroku
-  api_key:
-    secure: A3lzZE6jthwOdNWg/ziRxAtwwcvSyidtDnlleEsectdxvvylLxxRhqIpwExGdvCp15xqjrxwB/6AdlII9NmSA/ZJloF/Sa8joXpy20jawYD+EbukaHhjLJ6j/9FQ3C0ElvviYo7pW2vNzb0AXlpGf8P17TTx5XxGPmAFdujDT0U=
-  app: skittles
-  on:
-    repo: TheSkittles/TicTacToe
+# after_success: ./bin/copytogithub

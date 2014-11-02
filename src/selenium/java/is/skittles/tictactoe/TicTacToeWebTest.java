@@ -18,14 +18,14 @@ public class TicTacToeWebTest {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://127.0.0.1:4567";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    baseUrl = "https://skittles-staging.herokuapp.com";
+    driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
   }
 
   @Test
   public void testCellAlreadyUsed() throws Exception {
     driver.get(baseUrl + "/?marks=00");
-    String error = driver.findElement(By.cssSelector("p.error")).getText();
+    assertEquals(1, driver.findElements(By.cssSelector("p.error")).size());
   }
 
   @Test
@@ -33,6 +33,12 @@ public class TicTacToeWebTest {
     driver.get(baseUrl + "/?marks=462038157");
     assertEquals(1, driver.findElements(By.cssSelector("p.winner")).size());
     assertEquals(0, driver.findElements(By.cssSelector("p.draw")).size());
+  }
+
+  @Test
+  public void testNoInsultForUnoriginalMarks() throws Exception {
+    driver.get(baseUrl + "/?marks=0123");
+    assertEquals(0, driver.findElements(By.cssSelector("p.error")).size());
   }
 
   @After

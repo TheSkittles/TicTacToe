@@ -19,8 +19,9 @@ public class Board {
             throw new IndexOutOfBoundsException("Team can only be 1 or 2");
         }
 
-        int i = (int)(Math.floor(cell/n));
-        int j = cell % n;
+        int i = findHorizontal(cell);
+        int j = findVertical(cell);
+        System.out.println(i + ":" + j);
 
         if(board[i][j] != 0) {
             throw new IndexOutOfBoundsException("Cell has already been used");
@@ -34,7 +35,19 @@ public class Board {
         if(cell < 0 || cell > 8) {
             throw new IndexOutOfBoundsException("Cell out of bound");
         }
-        return board[(int)(Math.floor(cell/n))][cell % n];
+        return board[findHorizontal(cell)][findVertical(cell)];
+    }
+
+    public int findVertical(int cell) {
+        return cell % n;
+    }
+
+    public int findHorizontal(int cell) {
+        if (cell < 3)
+            return 0;
+        if (cell < 6)
+            return 1;
+        return 2;
     }
 
     public int findWinner(int team) {

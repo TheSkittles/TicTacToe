@@ -11,20 +11,20 @@ Travis-ci.org
 ```
 
 Run Automated Installation
-````sh 
+````sh
 wget https://raw.githubusercontent.com/TheSkittles/TicTacToe/master/bin/InstallPrograms
 ```
 ````sh
-chmod +x installPrograms
-./installPrograms
+chmod +x InstallPrograms
+./InstallPrograms
 ```
 
-Step By Step instruction (optional):  
+Step By Step instruction (optional):
 Check if Java JDK is installed:
 ```sh
 javac -version
 ```
-If you get an error or have an outdated version, install Java by entering:
+If you get an error or have an outdated version (Java 8 is required), install Java by entering:
 ```sh
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
