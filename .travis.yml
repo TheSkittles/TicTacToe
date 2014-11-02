@@ -14,7 +14,7 @@ script:
 #   app: skittles
 #   on:
 #     repo: TheSkittles/TicTacToe
-# env-global:
-#   secure: E4/FFETCL+Li5vVMCWsq0ih17jCTFhn4Hh89JbsFgXtpE/NAe7l03YiWBJjqNNWin3lbWx2G97BudttrvGB6tMr7mFzYnEV13P4i63Q6i2arTqwN8ndcpoXG9t+Tpocspk50vj+A6yyXv/0zNbRoFmJoKoN6f0n/boFJXfYeyAM=
+env-global:
+  secure: E4/FFETCL+Li5vVMCWsq0ih17jCTFhn4Hh89JbsFgXtpE/NAe7l03YiWBJjqNNWin3lbWx2G97BudttrvGB6tMr7mFzYnEV13P4i63Q6i2arTqwN8ndcpoXG9t+Tpocspk50vj+A6yyXv/0zNbRoFmJoKoN6f0n/boFJXfYeyAM=
 
 # after_success: ./bin/copytogithub
