@@ -1,12 +1,12 @@
 language: java
 jdk: oraclejdk8
 install:
-- gem install dpl
+  - gem install dpl
 script:
-- "./gradlew check"
-- "./gradlew jacoco"
-- dpl --provider=heroku --api-key='00909bde-5256-4e89-86c0-37b0d7a606c4' --app='skittles-staging'
-- "./bin/seleniumxvfb"
+  - "./gradlew check"
+  - "./gradlew jacoco"
+  - dpl --provider=heroku --api-key=${H_KEY} --app='skittles-staging'
+  - "./bin/seleniumxvfb"
 after_script:
 - "./bin/copytogithub"
 deploy:
