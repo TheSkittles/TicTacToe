@@ -39,11 +39,11 @@ public class TicTacToeWebTest {
     assertEquals(0, driver.findElements(By.cssSelector("p.draw")).size());
   }
 
-  // @Test
-  // public void testNoInsultForUnoriginalMarks() throws Exception {
-    // driver.get(baseUrl + "/?marks=0123");
-    // assertEquals(0, driver.findElements(By.cssSelector("p.error")).size());
-  // }
+  @Test
+  public void testNoInsultForUnoriginalMarks() throws Exception {
+    driver.get(baseUrl + "/?marks=0123");
+    assertEquals(0, driver.findElements(By.cssSelector("p.error")).size());
+  }
 
   @After
   public void tearDown() throws Exception {
