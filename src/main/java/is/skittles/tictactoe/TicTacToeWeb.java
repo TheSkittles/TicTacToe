@@ -57,9 +57,9 @@ public class TicTacToeWeb {
               map.put("draw", draw);
             }
 
-            if (marks != null && marks.equals("0123")) {
-              map.put("error", "Please be original for ONCE in your life.");
-            }
+            // if (marks != null && marks.equals("0123")) {
+              // map.put("error", "Please be original for ONCE in your life.");
+            // }
 
             return new ModelAndView(map, "TicTacToeWeb.mustache");
         }, new MustacheTemplateEngine());
