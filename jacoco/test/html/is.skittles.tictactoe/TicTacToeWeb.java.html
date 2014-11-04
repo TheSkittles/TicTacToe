@@ -57,9 +57,9 @@ import static spark.Spark.get;
               map.put(&quot;draw&quot;, draw);
             }
 
-            // if (marks != null &amp;&amp; marks.equals(&quot;0123&quot;)) {
-              // map.put(&quot;error&quot;, &quot;Please be original for ONCE in your life.&quot;);
-            // }
+            if (marks != null &amp;&amp; marks.equals(&quot;0123&quot;)) {
+              map.put(&quot;error&quot;, &quot;Please be original for ONCE in your life.&quot;);
+            }
 
             return new ModelAndView(map, &quot;TicTacToeWeb.mustache&quot;);
         }, new MustacheTemplateEngine());
